@@ -37,4 +37,4 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          echo print output: ${{ build.outputs.main }}
+          echo print output: ${{ needs.build.outputs.main }}
