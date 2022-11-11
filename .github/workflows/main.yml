@@ -25,7 +25,11 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-
+      - name: Lint k8s manifest files
+        uses: Azure/k8s-lint@v2.0
+        with:
+          lintType: kubeval
+          manifests: results
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
